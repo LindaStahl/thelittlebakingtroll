@@ -195,9 +195,17 @@ function applyStoredRecipeFilters() {
 }
 
 function bindCategoryFilters() {
-  navDropdownButton.addEventListener("click", () => {
-    navDropdown.classList.toggle("open");
-  });
+  if (navDropdownButton.tagName === "BUTTON") {
+    navDropdownButton.addEventListener("click", () => {
+      navDropdown.classList.toggle("open");
+    });
+  } else {
+    navDropdownButton.addEventListener("click", () => {
+      searchInput.value = "";
+      setActiveFilter("all");
+      navDropdown.classList.remove("open");
+    });
+  }
 
   document.querySelectorAll("[data-category-filter]").forEach((link) => {
     link.addEventListener("click", () => {

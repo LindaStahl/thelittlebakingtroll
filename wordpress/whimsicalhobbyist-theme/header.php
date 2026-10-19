@@ -21,7 +21,7 @@
       <nav class="main-nav" aria-label="Main navigation">
         <a href="<?php echo esc_url(whimsicalhobbyist_page_url('about')); ?>">About</a>
         <div class="nav-dropdown">
-          <button class="nav-dropdown-button" type="button">Recipes</button>
+          <a class="nav-dropdown-button" href="<?php echo esc_url(home_url('/#recipes')); ?>">Recipes</a>
           <div class="nav-dropdown-menu" id="category-menu" aria-label="Recipe categories"></div>
         </div>
         <a href="<?php echo esc_url(whimsicalhobbyist_page_url('popular-recipes')); ?>">Popular Recipes</a>

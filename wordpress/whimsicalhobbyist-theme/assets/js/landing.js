@@ -135,9 +135,11 @@ function renderLandingRecipes() {
 renderCategoryMenu();
 renderLandingRecipes();
 
-navDropdownButton.addEventListener("click", () => {
-  navDropdown.classList.toggle("open");
-});
+if (navDropdownButton.tagName === "BUTTON") {
+  navDropdownButton.addEventListener("click", () => {
+    navDropdown.classList.toggle("open");
+  });
+}
 
 document.addEventListener("click", (event) => {
   if (!navDropdown.contains(event.target)) {
